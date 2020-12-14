@@ -31,22 +31,29 @@ let pez3 = {
 let banco_peces = [pez1, pez2, pez3]
 
 function buscarPez(banco_peces, pezBuscado) {
-    let pezEncontrado = false
-    let indicePez = 0
+    let pezEncontrado = false // Hemos encontrado ya el pez?
+    let indicePez = 0 // Primera posición del array
+
+    // !pezEncontrado -> mientras NO hayamos encontrado al pez buscado,
+    // debemos seguir comprobado el array
+
+    //indicePez<=banco_peces_dentro_function.length -> Mientras el índice
+    // sea menor estricto al número de elementos del vector, significa
+    // que todavía no lo hemos recorrido por completo
 
     while(!pezEncontrado && indicePez<=banco_peces.length){
-        
+        pezEncontrado = (banco_peces[indicePez].nombre == pezBuscado )
+        indicePez++ // nos permite avanzar en el array; poder comprobar todas las posiciones
     }
 
     return pezEncontrado;
 }
 
 // Esta llamada debería devolver 'true'
-// console.log(banco_peces, 'Nemo'); 
+// console.log("Buscar a Dory:", buscarPez(banco_peces, "Dory"))
 
 // Esta llamada debería devolver 'true'
-// console.log(banco_peces, 'Sipho');
+// buscarPez(banco_peces, "Nemo")
 
-// Esta llamada debería devolver 'false'
-// console.log(banco_peces, 'Tenacitas');
-
+// // Esta llamada debería devolver 'false'
+console.log("Buscar a Tenacitas:", buscarPez(banco_peces, "Tenacitas"))

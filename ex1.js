@@ -9,3 +9,4 @@ let vacuna = {
 /**
  * Escribe una setencia que muestre por consola la efectividad de la vacuna. SOLO debe mostrar el valor de la propiedad 'efectividad'
  */
+console.log("Efectividad:", vacuna.efectividad)
